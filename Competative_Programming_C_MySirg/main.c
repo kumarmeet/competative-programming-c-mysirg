@@ -7,6 +7,26 @@ int main()
     return 0;
 }
 
+void decison_control()
+{
+int n;
+
+    scanf("%d", &n);
+
+    if(n % 2 == 1 && n > 5)
+        printf("OPGT5");
+    else if(n % 2 == 1 && n <= 5)
+        printf("OPLTE5");
+    else if(n % 2 == 1 && n < 0)
+        printf("ON");
+    else if(n % 2 == 0 && n <= 50)
+        printf("EPLTE50");
+    else if(n % 2 == 0 && n > 50)
+        printf("EPGT50");
+    else if(n % 2 == 0 && n < 0)
+        printf("EN");
+}
+
 void convert_digits_to_number_name()
 {
         int n, temp = 0, rev = 0;
