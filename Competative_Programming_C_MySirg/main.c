@@ -7,6 +7,28 @@ int main()
     return 0;
 }
 
+void print_reverse_prime(int n)
+{
+    int n, n1 = -1, n2 = 1, n3, i = 0;
+
+    scanf("%d", &n);
+
+    int arr[n];
+
+    while(i < n)
+    {
+        arr[i] = n1 + n2;
+
+        n1 = n2;
+        n2 = arr[i];
+
+        i++;
+    }
+
+    for(i = n - 1; i >= 0; i--)
+            printf("%d ", arr[i]);
+}
+
 void find_special_divisor(int n)
 {
     int q, i = 2;
