@@ -7,6 +7,37 @@ int main()
     return 0;
 }
 
+void find_special_divisor(int n)
+{
+    int q, i = 2;
+
+    scanf("%d", &n);
+
+    if(n > 0)
+    {
+        while(n != i)
+        {
+            if(n % i == 0)
+            {
+                q = n / i; //25 = 50 / 2;
+                if(q % i == 0)
+                {
+                    printf("%d", i);
+                    break;
+                }
+                else
+                {
+                    printf("%d", -1);
+                    break;
+                }
+            }
+            i++;
+        }
+    }
+
+    return;
+}
+
 void decison_control()
 {
 int n;
