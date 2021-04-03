@@ -7,6 +7,46 @@ int main()
     return 0;
 }
 
+void rearrange_array()
+{
+     int i,j, temp, size = 0;
+
+    scanf("%d", &size);
+
+    if(size % 2 == 0 && size > 0)
+    {
+        int a[size], b[size / 2], c[size / 2];
+
+        for(i = 0; i < size; i++)
+            scanf("%d", &a[i]);
+
+        for(i = 0; i < size; i++)
+        {
+            for(j = i + 1; j < size; j++)
+            {
+                if(a[i] > a[j])
+                {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+
+        for(i = 0; i < size/2; i++)
+        {
+            b[i] = a[size - i - 1];
+            c[i] = a[i];
+        }
+
+        for(i = 0; i < size/2; i++)
+            printf("%d ",b[i]);
+
+        for(i = 0; i < size/2; i++)
+            printf("%d ",c[i]);
+    }
+}
+
 void print_reverse_prime(int n)
 {
     int n, n1 = -1, n2 = 1, n3, i = 0;
