@@ -7,6 +7,74 @@ int main()
     return 0;
 }
 
+void rearrange_array_after_deletion()
+{
+    int i, j, n, k, n1, count = 0;
+
+    scanf("%d", &n);
+
+    int a[n];
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    scanf("%d", &n1);
+
+    int b[n1], c[n];
+
+    for(i = 0; i < n1; i++)
+        scanf("%d", &b[i]);
+
+
+    for(i = 0; i < n1; i++)
+    {
+        for(j = 0; j < n; j++)
+        {
+            if(b[i] == a[j])
+            {
+                count++;
+            }
+        }
+    }
+
+    if(count == n1)
+    {
+        for(i = 0; i < n1; i++)
+        {
+            for(j = 0; j < n; j++)
+            {
+                if(b[i] == a[j])
+                {
+                    a[j] = 0;
+                    break;
+                }
+            }
+        }
+
+        for(i = 0; i < n; i++)
+            c[i] = 0;
+
+        k = 0;
+
+        for(i = 0; i < n; i++)
+        {
+            for(j = i; j < n; j++)
+            {
+                if(a[j] != 0)
+                {
+                    c[k] = a[j];
+                    k++;
+                    break;
+                }
+                break;
+            }
+        }
+
+        for(i = 0; i < n; i++)
+            printf("%d ", c[i]);
+    }
+}
+
 void rearrange_array()
 {
      int i,j, temp, size = 0;
