@@ -7,11 +7,9 @@ int main()
     return 0;
 }
 
-void index_based_rearrangement(int n, int a[], int b[], int c[])
+void indexBasedRearrangement(int n, int *a, int *b, int *c)
 {
     int i, j;
-    scanf("%d", &n);
-    a[n], b[n], c[n];
 
     for(i = 0; i < n; i++)
         scanf("%d",&a[i]);
@@ -20,16 +18,12 @@ void index_based_rearrangement(int n, int a[], int b[], int c[])
         scanf("%d",&b[i]);
 
     for(i = 0; i < n; i++)
-    {
         for(j = 0; j < n; j++)
-        {
             if(b[i] == j)
             {
                 c[i] = a[j];
                 break;
             }
-        }
-    }
 
     for(i = 0; i < n; i++)
         printf("%d ",c[i]);
