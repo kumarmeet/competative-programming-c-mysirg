@@ -7,6 +7,34 @@ int main()
     return 0;
 }
 
+void index_based_rearrangement(int n, int a[], int b[], int c[])
+{
+    int i, j;
+    scanf("%d", &n);
+    a[n], b[n], c[n];
+
+    for(i = 0; i < n; i++)
+        scanf("%d",&a[i]);
+
+    for(i = 0; i < n; i++)
+        scanf("%d",&b[i]);
+
+    for(i = 0; i < n; i++)
+    {
+        for(j = 0; j < n; j++)
+        {
+            if(b[i] == j)
+            {
+                c[i] = a[j];
+                break;
+            }
+        }
+    }
+
+    for(i = 0; i < n; i++)
+        printf("%d ",c[i]);
+}
+
 void rearrange_array_after_deletion()
 {
     int i, j, n, k, n1, count = 0;
