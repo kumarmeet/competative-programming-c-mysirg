@@ -7,6 +7,18 @@ int main()
     return 0;
 }
 
+void convertOppositeCase(char *str)
+{
+    int i;
+    for(i = 0; str[i]; i++)
+        if(str[i] >= 'a' && str[i] <= 'z')
+            str[i] = str[i] - 32;
+        else if(str[i] >= 'A' && str[i] <='Z')
+            str[i] = str[i] + 32;
+    puts(str);
+
+}
+
 void indexBasedRearrangement(int n, int *a, int *b, int *c)
 {
     int i, j;
