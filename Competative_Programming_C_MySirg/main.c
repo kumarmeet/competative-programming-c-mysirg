@@ -7,6 +7,30 @@ int main()
     return 0;
 }
 
+void capitalFirstAndLastLetter(char *s)
+{
+    char s[35];
+    int i;
+
+    if (s[0] >= 'a' && s[0] <= 'z')
+        s[0] = s[0] - 32;
+
+    for (i = 1; s[i]; i++)
+    {
+        if (s[i] == ' ')
+        {
+            if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+                s[i + 1] = s[i + 1] - 32;
+            if (s[i - 1] >= 'a' && s[i - 1] <= 'z')
+                s[i - 1] = s[i - 1] - 32;
+        }
+    }
+
+    if (s[i] == '\0')
+        s[i - 1] = s[i - 1] - 32;
+    puts(s);
+}
+
 void convertOppositeCase(char *str)
 {
     int i;
