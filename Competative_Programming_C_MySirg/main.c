@@ -9,7 +9,6 @@ int main()
 
 void capitalFirstAndLastLetter(char *s)
 {
-    char s[35];
     int i;
 
     if (s[0] >= 'a' && s[0] <= 'z')
