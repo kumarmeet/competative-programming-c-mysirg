@@ -7,6 +7,30 @@ int main()
     return 0;
 }
 
+int anagramStrings(char *s, char *t)
+{
+    int i, j, count = 0;
+
+    gets(s);
+    gets(t);
+
+    if (strlen(s) == strlen(t))
+    {
+        for (i = 0; i < strlen(s); i++)
+            for (j = 0; j < strlen(t); j++)
+                if (s[i] == t[j])
+                {
+                    count++;
+                    break;
+                }
+    }
+
+    if (count == strlen(s))
+        return 1;
+    else
+        return 0;
+}
+
 void capitalFirstAndLastLetter(char *s)
 {
     int i;
