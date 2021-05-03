@@ -7,6 +7,26 @@ int main()
     return 0;
 }
 
+void findMaxAndMin(int *arr, int size)
+{
+    int i, min, max;
+
+    for (i = 0; i < size; i++)
+        scanf("%d", &arr[i]); //3 2 4 8 9
+
+    max = min = arr[0];
+
+    for (i = 0; i < size; i++)
+    {
+        if (min > arr[i])
+            min = arr[i];
+        if (max < arr[i])
+            max = arr[i];
+    }
+
+    printf("%d %d", max, min);
+}
+
 int anagramStrings(char *s, char *t)
 {
     int i, j, count = 0;
