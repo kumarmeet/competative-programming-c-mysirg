@@ -330,6 +330,29 @@ void convert_digits_to_number_name()
         while(rev);
     }
 }
+
+void printNearestFibonicciNumber(int n)
+{
+    int n1 = -1, n2 = 1, n, n3;
+    while (n)
+    {
+        n3 = n1 + n2;
+        n1 = n2;
+        n2 = n3;
+
+        if (n - 1 == n3)
+        {
+            printf("%d ", n3);
+        }
+
+        if (n3 > n)
+        {
+            printf("%d", n3);
+            break;
+        }
+    }
+}
+
 void print_prime_factorization()
 {
     int n, i = 2;
