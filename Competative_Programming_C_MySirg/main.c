@@ -7,6 +7,23 @@ int main()
     return 0;
 }
 
+void swap(int *a, int *b, int *c, int *d)
+{
+    int arr[4];
+
+    arr[0] = *a;
+    arr[1] = *b;
+    arr[2] = *c;
+    arr[3] = *d;
+
+    *b = arr[0];
+    *c = arr[1];
+    *d = arr[2];
+    *a = arr[3];
+
+    printf("%d %d %d %d", *a, *b, *c, *d);
+}
+
 void findMaxAndMin(int *arr, int size)
 {
     int i, min, max;
