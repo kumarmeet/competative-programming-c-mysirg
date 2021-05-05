@@ -7,6 +7,37 @@ int main()
     return 0;
 }
 
+int reduceToZeroByGivenNumber(int *arr, int n, int x)
+{
+    int i, j, min, temp, c;
+    min = temp = c = 0;
+
+    int a[n];
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    temp = x;
+    for (i = 0; i < 8; i++)
+    {
+        for (j = i; j < 8; j++)
+        {
+            temp = temp - a[j];
+            min++;
+            if (temp == 0)
+                c = min;
+            if (temp < 0)
+                break;
+        }
+        min = 0;
+        temp = x;
+    }
+
+    if (c)
+        return c;
+    else
+        return -1;
+}
+
 void findInvalidTerms(int *arr, int n)
 {
     int i, j, c, flag = 0;
