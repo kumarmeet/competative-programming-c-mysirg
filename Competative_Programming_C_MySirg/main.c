@@ -7,6 +7,37 @@ int main()
     return 0;
 }
 
+void findInvalidTerms(int *arr, int n)
+{
+    int i, j, c, flag = 0;
+    int arr[n];
+
+    for (i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    c = arr[1] - arr[0];
+
+    for (i = 2; i < n; i++)
+    {
+        for (j = i + 1; j < n; j++)
+        {
+            if (c == arr[j] - arr[i])
+                break;
+            else
+            {
+                flag++;
+                printf("%d ", arr[j]);
+                break;
+            }
+        }
+    }
+
+    if (flag == 0)
+        printf("0");
+
+    return 0;
+}
+
 void swap(int *a, int *b, int *c, int *d)
 {
     int arr[4];
