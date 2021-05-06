@@ -7,6 +7,38 @@ int main()
     return 0;
 }
 
+void countSwapOperation(char *s, char *p)
+{
+    int i, j, count = 0;
+    char c, d;
+
+    scanf("%s", s);
+    fflush(stdin);
+    scanf("%s", p);
+
+    if (strlen(s) == strlen(p))
+    {
+        for (i = 0; i < strlen(s); i++)
+        {
+            c = s[i];
+            d = p[i];
+            for (j = i; j < strlen(s); j++)
+            {
+                if (c == d)
+                    continue;
+
+                if (c == p[j])
+                {
+                    p[i] = c;
+                    p[j] = d;
+                    count++;
+                }
+            }
+        }
+        printf("%d", count);
+    }
+}
+
 int reduceToZeroByGivenNumber(int *arr, int n, int x)
 {
     int i, j, min, temp, c;
