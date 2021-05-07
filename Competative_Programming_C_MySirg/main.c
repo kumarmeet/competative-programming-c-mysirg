@@ -7,6 +7,48 @@ int main()
     return 0;
 }
 
+void reverseDigitInString(char *str, int length /*,int k*/)
+{
+    char temp;
+    int i, j;
+
+    // scanf("%d", &k);
+    // str[k];
+
+    // fflush(stdin);
+    // gets(str);
+
+    length = strlen(str);
+
+    for (i = 0; i < strlen(str); i++)
+    {
+        for (j = length - 1; j > i; j--)
+        {
+            if (str[j] >= 'a' && str[j] <= 'z')
+            {
+                length--;
+                continue;
+            }
+            else if (str[i] >= '0' && str[i] <= '9')
+            {
+                if (str[i] > str[j] || str[i] < str[j])
+                {
+                    temp = str[i];
+                    str[i] = str[j];
+                    str[j] = temp;
+                    j--;
+                    length--;
+                    break;
+                }
+            }
+            else
+                break;
+        }
+    }
+
+    puts(str);
+}
+
 void countSwapOperation(char *s, char *p)
 {
     int i, j, count = 0;
