@@ -7,6 +7,38 @@ int main()
     return 0;
 }
 
+void frequencyOfCharacter(char *str, int n)
+{
+    int i, count = 1, j;
+    char freq[256] = {0};
+
+    str[n];
+
+    for (i = 0; str[i]; i++)
+    {
+        freq[str[i]]++;
+        //this logic is for prints only single character
+        for (j = i + 1; str[j]; j++)
+        {
+            if (str[i] == str[j])
+                count++;
+        }
+    }
+
+    for (i = 0; str[i]; i++)
+    {
+        if (freq[str[i]] > 1)
+        {
+            printf("%c %d\n", str[i], freq[str[i]]);
+            freq[str[i]] = 0;
+        }
+        if (freq[str[i]] == 1 && count == 1)
+        {
+            printf("%c %d\n", str[i], freq[str[i]]);
+            freq[str[i]] = 0;
+        }
+    }
+
 void reverseDigitInString(char *str, int length /*,int k*/)
 {
     char temp;
