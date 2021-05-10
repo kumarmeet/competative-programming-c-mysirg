@@ -14,6 +14,28 @@ int main()
     return 0;*/
 }
 
+int strongNumber(int input)
+{
+    int r, i, sum = 0, fact = 1, temp;
+    temp = input;
+    while (input)
+    {
+        r = input % 10;     //145 % 10 = 5
+        input = input / 10; //145 / 10 = 14
+        for (i = 1; i <= r; i++)
+        {
+            fact = fact * i;
+        }
+        sum = sum + fact;
+        fact = 1;
+    }
+
+    if (sum == temp)
+        return 1;
+    else
+        return 0;
+}
+
 void reverseTheVowels(char *str, int k)
 {
     char temp;
