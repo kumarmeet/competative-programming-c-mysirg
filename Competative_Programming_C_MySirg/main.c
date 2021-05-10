@@ -14,6 +14,19 @@ int main()
     return 0;*/
 }
 
+void printPpythagoreanTriplets(int final)
+{
+    int a, b, c;
+
+    scanf("%d", &final);
+
+    for (a = 1; a <= final; a++)
+        for (b = a; b <= final; b++)
+            for (c = b; c <= final; c++)
+                if (c * c == a * a + b * b)
+                    printf("%d %d %d\n", a, b, c);
+}
+
 int strongNumber(int input)
 {
     int r, i, sum = 0, fact = 1, temp;
