@@ -3,8 +3,40 @@
 
 int main()
 {
-    //call below function here and execute that
-    return 0;
+    /*//call update array function
+    int i, *s, arr1[10], arr2[10], update[3];
+    for (i = 0; i < 10; i++)
+        scanf("%d", &arr1[i]);
+    s = arr2;
+    s = updateArray(arr1, 10, update, 3);
+    for (i = 0; i < 10; i++)
+        printf("%d ", s[i]);
+    return 0;*/
+}
+
+
+int *updateArray(int *arr1, int arr1Size, int *update, int updateSize)
+{
+    int i, j, p;
+
+    arr1[arr1Size];
+
+    update[updateSize];
+
+    for (i = 0; i < updateSize; i++)
+    {
+        scanf("%d", &p);
+        scanf("%d", &update[i]);
+
+        for (j = 0; j < arr1Size; j++)
+        {
+            if (p == arr1[j])
+            {
+                arr1[j] = update[i];
+            }
+        }
+    }
+    return arr1;
 }
 
 void frequencyOfCharacter(char *str, int n)
