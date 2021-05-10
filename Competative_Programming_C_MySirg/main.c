@@ -14,6 +14,39 @@ int main()
     return 0;*/
 }
 
+void reverseTheVowels(char *str, int k)
+{
+    char temp;
+    int i, j, length;
+
+    // scanf("%d", &k);
+    str[k];
+
+    // fflush(stdin);
+    // gets(str);
+
+    length = strlen(str);
+
+    for (i = 0; i < strlen(str); i++)
+    {
+        for (j = length - 1; j > i; j--)
+        {
+            if ((str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') &&
+                (str[j] == 'a' || str[j] == 'e' || str[j] == 'i' || str[j] == 'o' || str[j] == 'u'))
+            {
+                temp = str[i];
+                str[i] = str[j];
+                str[j] = temp;
+                length--;
+                break;
+            }
+            else
+                break;
+        }
+    }
+    puts(str);
+}
+
 
 int *updateArray(int *arr1, int arr1Size, int *update, int updateSize)
 {
