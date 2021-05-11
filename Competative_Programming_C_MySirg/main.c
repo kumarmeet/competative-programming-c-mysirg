@@ -14,6 +14,32 @@ int main()
     return 0;*/
 }
 
+int countNumberofCharInSubstring(char *str, int n)
+{
+    int i, j, k, l, count = 0;
+    str[n];
+
+//     fflush(stdin);
+//     gets(str);
+
+    for (i = 1; i <= strlen(str); i++)
+    {
+        for (j = 0; j <= strlen(str) - i; j++)
+        {
+            l = j + i - 1;
+            for (k = j; k <= l; k++)
+            {
+                count++;
+            }
+        }
+    }
+
+    if (str[0] == str[strlen(str) - 1])
+        return count -1;
+    else
+        return count;
+}
+
 void printPpythagoreanTriplets(int final)
 {
     int a, b, c;
