@@ -14,6 +14,60 @@ int main()
     return 0;*/
 }
 
+//works only text with space
+int totalAnagramCount(char *text, char *find)
+{
+    int count = 0, anaCount = 0, i = 0, j, k, l, n = 0;
+
+    // gets(text);
+    // fflush(stdin);
+    // gets(find);
+
+    while (text[i])
+    {
+        if (text[i] != ' ')
+        {
+            for (j = i; text[j]; j++)
+            {
+                if (text[j] != ' ')
+                {
+                    count++; //record how many string checked
+                    n++;
+                }
+                if (text[j] == ' ')
+                    break;
+            }
+
+            // check s has same length of w
+            if (strlen(find) == n)
+            {                             //compare w string to s string
+                for (k = 0; find[k]; k++) //w string alwas start 0
+                {
+                    for (l = i; text[l] != ' '; l++) //for s string
+                    {
+                        if (find[k] == text[l])
+                        {
+                            anaCount++; //calcualte character which is anagram in s string
+                            break;
+                        }
+                    }
+                    if (find[k] != text[l]) //if first character of w is not in s string then break
+                        break;
+                }
+            }
+
+            i = count;
+            k = 0;
+            n = 0;
+        }
+        else
+            i++;
+    }
+
+    //(anaCount / strlen(w)) s string has 15 character of anagram to w string then divide by length of w string
+    return anaCount != 0 ? (anaCount / strlen(find)) : 0;
+}
+
 int countNumberofCharInSubstring(char *str, int n)
 {
     int i, j, k, l, count = 0;
