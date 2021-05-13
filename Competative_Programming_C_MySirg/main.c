@@ -14,6 +14,29 @@ int main()
     return 0;*/
 }
 
+void findPresenceOfDigit(int n, int firstNumber, int secondNumber)
+{
+    int flag = 0;
+
+    while (1)
+    {
+        if (firstNumber % 10 == n || firstNumber % 100 == n)
+            printf("%d ", firstNumber);
+        else if (firstNumber / 10 == n || firstNumber / 100 == n)
+        {
+            printf("%d ", firstNumber);
+            flag = 1;
+        }
+
+        if (firstNumber == secondNumber)
+            break;
+        firstNumber++;
+    }
+
+    if (flag == 0)
+        printf("%d", -1);
+}
+
 //works only text with space
 int totalAnagramCount(char *text, char *find)
 {
