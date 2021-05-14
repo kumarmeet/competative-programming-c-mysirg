@@ -14,6 +14,33 @@ int main()
     return 0;*/
 }
 
+int countWarriorSkills(int a[], int n)
+{
+  int i,j,temp,sum=0;
+  a[n];
+
+  for(i=0;i < n;i++)
+  {
+    for(j=i+1;j<n;j++)
+    {
+      if(a[i] < a[j])
+      {
+        temp =a[i];
+        a[i] = a[j];
+        a[j]=temp;
+      }
+    }
+  }
+  //9 8 6 4 4 4 3 2 1
+  
+  for(i=0;i <n;i++)
+  {
+    if(i%2==0)
+    sum += a[i];
+  }
+  return sum;
+}
+
 void findPresenceOfDigit(int n, int firstNumber, int secondNumber)
 {
     int flag = 0;
