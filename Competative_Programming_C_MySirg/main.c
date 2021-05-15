@@ -14,6 +14,13 @@ int main()
     return 0;*/
 }
 
+int find(char str[], int i)
+{
+    if (str[i] == '\0')
+        return -1;
+    return (str[i] >= 'A' && str[i] <= 'Z') ? i + 1 : find(str,i + 1);
+}
+
 int countWarriorSkills(int a[], int n)
 {
   int i,j,temp,sum=0;
