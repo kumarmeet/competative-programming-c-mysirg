@@ -13,6 +13,35 @@ int main()
         printf("%d ", s[i]);
     return 0;*/
 }
+char * numberNames(int num) //char * countdigit(12345);
+{
+    static int i;
+    //base case
+    if(num != 0)
+    {
+        i++;
+        countDigit(num / 10);
+    }
+
+    switch(i)
+    {
+    case 0 ... 1:
+        return "U";
+        break;
+    case 2:
+        return "T";
+        break;
+    case 3:
+        return "H";
+        break;
+    case 4:
+        return "TH";
+        break;
+    case 5:
+        return "TT";
+        break;
+    }
+}
 
 int find(char str[], int i)
 {
