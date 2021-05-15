@@ -13,6 +13,30 @@ int main()
         printf("%d ", s[i]);
     return 0;*/
 }
+
+void hailstoneSequence(int num) //int * hailstone(5)
+{
+    //base case
+    if(num != 1)
+    {
+        if(num % 2 == 1)
+        {
+            printf("%d ", num);
+            hailstone((num * 3) + 1);
+        }
+        else
+        {
+            printf("%d ", num);
+            hailstone(num / 2);
+        }
+    }
+    if(num == 1)
+    {
+        printf("%d ", 1);
+        return;
+    }
+}
+
 char * numberNames(int num) //char * countdigit(12345);
 {
     static int i;
