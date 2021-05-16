@@ -14,6 +14,32 @@ int main()
     return 0;*/
 }
 
+void countFrequencyOfCharacters(char *str)
+{
+    char freq[256] = {0}, cp[100];
+    int i = 0, j;
+
+    strcpy(cp, str);
+
+    while (str[i])
+    {
+        if (str[i] >= 'a' && str[i] <= 'z')
+            str[i] = str[i] - 32;
+
+        i++;
+    }
+
+    for (i = 0; str[i]; i++)
+        freq[str[i]]++;
+
+    for (i = 0; str[i]; i++)
+        if (freq[str[i]] >= 1)
+        {
+            printf("%c %d\n", cp[i], freq[str[i]]);
+            freq[str[i]] = 0;
+        }
+}
+
 int isArrayHasSubset(int *a, int *b, int p, int n)
 {
     int i, j, flag = 0, k = 0;
