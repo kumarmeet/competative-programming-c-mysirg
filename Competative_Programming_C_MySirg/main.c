@@ -14,6 +14,31 @@ int main()
     return 0;*/
 }
 
+int isArrayHasSubset(int *a, int *b, int p, int n)
+{
+    int i, j, flag = 0, k = 0;
+    a[p];
+    b[n];
+
+    for(i = 0; i < p; i++)
+    {
+        j = 0;
+        while(a[i] == b[j]) //a 1 2 3 4 5 6 7 8 9 10 //b 8 9 10
+        {
+            i++;
+            j++;
+
+            if(j == n)
+            {
+                flag = 1;
+                break;
+            }
+        }
+    }
+
+    return flag ? 1 : -1;
+}
+
 void hailstoneSequence(int num) //int * hailstone(5)
 {
     //base case
