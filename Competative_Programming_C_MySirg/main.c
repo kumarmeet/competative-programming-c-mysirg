@@ -14,6 +14,29 @@ int main()
     return 0;*/
 }
 
+int stringReformed(char **str, char *check)
+{
+    int i, j = 0, k = 0, flag = 0, n, size;
+
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < strlen(str[i]); j++, k++)
+        {
+            if (str[i][j] == check[k])
+            {
+                flag = 1;
+            }
+            else
+                flag = 0;
+        }
+    }
+
+    if (flag)
+        printf("%d", 1);
+    else
+        printf("%d", -1);
+}
+
 void countFrequencyOfCharacters(char *str)
 {
     char freq[256] = {0}, cp[100];
