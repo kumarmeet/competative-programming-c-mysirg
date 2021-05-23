@@ -14,6 +14,52 @@ int main()
     return 0;*/
 }
 
+int createWord(char word[][40],char *str, int n, int size)
+{
+    int i, j, count = 0, k = 0;
+    str[50];
+
+//    scanf("%d%d",&n,&size);
+    word[n][size];
+
+//    fflush(stdin);
+//    scanf("%s",str);
+
+//    for(i = 0; i < n; i++)
+//        scanf("%s",word[i]);
+
+    i = 0;
+
+    while(str[i])
+    {
+        for(j = 0; str[i]; j++)
+        {
+            if(str[i] == word[k][j])
+            {
+                word[k][j] = '\0';
+                str[i] = '\0';
+            }
+        }
+
+        if(str[i] == '\0')
+            i++;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        for(j = 0; j < n; j++)
+        {
+            if(word[i][j] == '\0')
+            {
+                count++;
+                break;
+            }
+        }
+    }
+
+    return count;
+}
+
 int hasWordInTwoDSTring(char word[][10], char *str)
 {
     int i, j, count = 0, k = 0, n = 5, size = 5;
