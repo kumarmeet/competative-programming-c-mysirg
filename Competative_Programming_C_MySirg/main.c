@@ -14,6 +14,27 @@ int main()
     return 0;*/
 }
 
+int hasWordInTwoDSTring(char word[][10], char *str)
+{
+    int i, j, count = 0, k = 0, n = 5, size = 5;
+    
+    word[n][size];
+    str[n];
+
+    for(i = 0; i < n; i++)
+        for(j = 0; j < strlen(word[i]); j++)
+            if(str[k] == word[i][j])
+            {
+                count++;
+                k++;
+            }
+
+    if(count == strlen(str))
+        return 1;
+    else
+        return -1;
+}
+
 int stringReformed(char **str, char *check)
 {
     int i, j = 0, k = 0, flag = 0, n, size;
