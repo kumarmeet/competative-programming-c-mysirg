@@ -9,6 +9,9 @@ int main()
 
     for(int l = 0; l < x; l++)
         scanf("%d", &a[l]);
+    
+//      for(int l = x + 1; l >= 0; l--)
+//       a[l] = a[l - 1];
 
     int large = f_max(a, x); //find max
     int count[large + 1];
