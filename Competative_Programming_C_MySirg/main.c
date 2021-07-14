@@ -14,6 +14,43 @@ int main()
     return 0;*/
 }
 
+void remove_duplicate_string(char *str)
+{
+    int i, j;
+    char temp;
+
+    int len = strlen(str) - 1;
+
+    for(i = 0; i < len; i++)
+    {
+        temp = str[i];
+        for(j = i + 1; j <= len; j++)
+        {
+            if(temp + 32 == str[j])
+                str[j] = '0';
+            if(temp - 32 == str[j])
+                str[j] = '0';
+            if(temp == str[j])
+                str[j] = '0';
+        }
+    }
+
+    char duplicate_remove[30] = "";
+
+    j = 0;
+
+    for(i = 0; i <= len; i++)
+    {
+        if(str[i] != '0')
+        {
+            duplicate_remove[j] = str[i];
+            j++;
+        }
+    }
+
+    puts(duplicate_remove);
+}
+
 //fre_based_arr_sorting
 
 void fre_occ_sort(int *a, int x)
