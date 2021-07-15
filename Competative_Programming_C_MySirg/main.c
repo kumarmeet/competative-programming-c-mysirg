@@ -14,6 +14,76 @@ int main()
     return 0;*/
 }
 
+//find median
+void find_median(int *a, int *b, int _a, int _b, int *merge, int _m)
+{
+    //sort element (merging is possible when lists must be sorted)
+    bubble_sort(a, _a);
+    bubble_sort(b, _b);
+
+    int i, j, k;
+    i = j = k = 0;
+
+    //merge a[] and b[]
+    while(i < _a && j < _b)
+    {
+        if(a[i] < b[j])
+            merge[k++] = a[i++];
+        else
+            merge[k++] = b[j++];
+    }
+
+    for(; i < _a ; i++)
+        merge[k++] = a[i];
+
+    for(; j < _b ; j++)
+        merge[k++] = b[j];
+
+    int mid = merge[_m / 2];
+
+    if(_m % 2 == 0) // if size of merge[] is even then it will got real number
+    {
+        for(i = 0; i < mid - 1; i++);
+        float median1 = (float)(mid + i) / 2;
+        printf("%.2f", median1);
+    }
+    else
+    {
+        for(i = 0; i < mid; i++);
+        int median2 = (mid + i) / 2;
+        printf("%d", median2);
+    }
+}
+
+void bubble_sort(int *arr, int size)
+{
+    int flag;
+
+    for(int i = 0; i < size -1; i++)
+    {
+        flag = 1;
+        for(int j = 0; j < size - 1 - i; j++)
+        {
+            if(arr[j] > arr[j + 1])
+            {
+                swap(&arr[j], &arr[j + 1]);
+                flag = 0;
+            }
+        }
+        if(flag)
+            break;
+    }
+}
+
+void swap(int *a, int *b)
+{
+    int c;
+    c = *a;
+    *a = *b;
+    *b = c;
+}
+//find median end
+
 //rearrange string in alphabetical order
 void re_alpha_order(char *str)
 {
