@@ -67,13 +67,20 @@ int main()
 
     j = 0;
 
+        j = 0;
+
     while(j < 30)
     {
         if(b[j] != -1 && b[j] != 0)
-            printf("%d ", b[j]);
-
-        if(b[j] == -1)
-            printf("\n");
+        {
+            if(b[j + 1] == -1) // this is for space after element
+            {
+                printf("%d", b[j]);
+                printf("\n");
+            }
+            else
+              printf("%d ", b[j]);
+        }
         j++;
     }
 
