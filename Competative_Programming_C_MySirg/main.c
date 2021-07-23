@@ -14,6 +14,49 @@ int main()
     return 0;*/
 }
 
+void addmission(int a, int b, int c, char course_name)
+{
+    switch(course_name)
+    {
+    case 'X':
+        if(a >= 90 && (b >= 85 && b <= 90) && (c >= 75 && c <= 90) && ((a + b + c) >= 255))
+            printf("");
+        else
+            printf("-1 %c\n", course_name);
+        if(a >= 80 && b >= 90 && c >= 85 && ((a + b + c) >= 260))
+            printf("1 Y");
+        else if((a >= 75 && a <= 90) && (b >= 80 && b <= 90 ) && (c >= 85 && c <= 90) && ((a + b + c) >= 255))
+            printf("1 Z");
+        else if((a + b + c) < 255)
+            printf("0");
+        break;
+    case 'Y':
+        if(a >= 80 && b >= 90 && c >= 85 && ((a + b + c) >= 260))
+            printf("");
+        else
+            printf("-1 %c\n", course_name);
+        if(a >= 90 && (b >= 85 && b <= 90) && (c >= 75 && c <= 90) && ((a + b + c) >= 255))
+            printf("1 X");
+        else if((a >= 75 && a <= 90) && (b >= 80 && b <= 90 ) && (c >= 85 && c <= 90) && ((a + b + c) >= 255))
+            printf("1 Z");
+        else if((a + b + c) < 260)
+            printf("0");
+        break;
+    case 'Z':
+        if((a >= 75 && a <= 90) && (b >= 80 && b <= 90 ) && (c >= 85 && c <= 90) && ((a + b + c) >= 255))
+            printf("");
+        else
+            printf("-1 %c\n", course_name);
+        if(a >= 90 && (b >= 85 && b <= 90) && (c >= 75 && c <= 90) && ((a + b + c) >= 255))
+            printf("1 X");
+        else if(a >= 80 && b >= 90 && c >= 85 && ((a + b + c) >= 260))
+            printf("1 Y");
+        else if((a + b + c) < 255)
+            printf("0");
+        break;
+    }
+}
+
 //find median
 void find_median(int *a, int *b, int _a, int _b, int *merge, int _m)
 {
